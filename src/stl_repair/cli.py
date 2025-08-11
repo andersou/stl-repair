@@ -2,7 +2,6 @@
 """CLI entry point for STL repair tool."""
 from __future__ import annotations
 import argparse
-import datetime
 import importlib
 import os
 import sys
