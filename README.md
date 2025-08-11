@@ -30,6 +30,17 @@ cd stl-repair
 pip install -e .
 ```
 
+### Option 2: Use without installation (using uv)
+
+```bash
+# Clone the repository
+git clone https://github.com/andersou/stl-repair.git
+cd stl-repair
+
+# Run directly with uv (no installation required)
+uv run stl-repair input.stl [OPTIONS]
+```
+
 ## Usage
 
 ### Command Line Options
@@ -52,20 +63,31 @@ Options:
 ### Examples
 
 ```bash
-# Basic repair
+# Basic repair (installed)
 stl-repair model.stl
+
+# Basic repair (using uv without installation)
+uv run stl-repair model.stl
 
 # Specify output file
 stl-repair model.stl -o repaired_model.stl
+# or with uv:
+uv run stl-repair model.stl -o repaired_model.stl
 
 # Use custom suffix
 stl-repair model.stl -s "_cleaned"
+# or with uv:
+uv run stl-repair model.stl -s "_cleaned"
 
 # Force basic repair (skip 3D Print add-on)
 stl-repair model.stl --force-basic
+# or with uv:
+uv run stl-repair model.stl --force-basic
 
 # Verbose output
 stl-repair model.stl -v 3
+# or with uv:
+uv run stl-repair model.stl -v 3
 ```
 
 ## Development
@@ -77,7 +99,7 @@ stl-repair model.stl -v 3
 git clone https://github.com/andersou/stl-repair.git
 cd stl-repair
 
-# Install in development mode with dev dependencies
+# Run with uv (automatically manages dependencies)
 uv run stl-repair
 ```
 
